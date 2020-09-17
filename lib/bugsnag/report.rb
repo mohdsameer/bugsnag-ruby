@@ -270,7 +270,7 @@ module Bugsnag
     end
     
     def trace_object(exception)
-      Stacktrace.new(exception.backtrace, configuration).to_a
+      Stacktrace.process(exception.backtrace, configuration)
     rescue NoMethodError
       nil
     end
